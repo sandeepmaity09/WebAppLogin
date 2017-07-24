@@ -21,4 +21,39 @@ class HomeController @Inject() extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
+  def hello = Action {
+    Ok("Hello World")
+  }
+
+  def gotRequest = Action { implicit request =>
+    Ok("Got Request [" + request + "]")
+  }
+
+  def myName(name:String,sname:String) = Action {
+    Ok("Hello " + name + " " + sname)
+  }
+
+  def dynamicName(name:String) = Action {
+    Ok("Hello " + name)
+  }
+
+  def regexName(id:String) = Action {
+    val num = id.length + 34
+    Ok(num.toString)
+  }
+
+/*  def show(page:String) = Action {
+    Result {
+      loadContentFromDatabase(page).map { htmlContent =>
+        Ok(htmlContent).as("text/html")
+      }.getOrElse(NotFound)
+    }
+  }*/
+
+/*  def show(id:Long) = Action {
+    Client.findById(id).map { client =>
+      Ok(views.html.Clients.display(client))
+    }.getOrElse(NotFound)
+  }*/
+
 }
