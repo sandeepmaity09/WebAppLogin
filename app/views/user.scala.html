@@ -1,0 +1,9 @@
+@(userForm:Form[UserData])
+
+@import helper._
+
+@helper.form(action = routes.FormController.userPost){
+  @inputText(userForm("name"))
+  @inputText(userForm("age"))
+  <input type="submit" value="Submit">
+}
