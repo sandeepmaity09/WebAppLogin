@@ -4,6 +4,12 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+#GET     /p                          controllers.HomeController.show(page = "home")
+GET     /hello                      controllers.HomeController.hello
+GET     /gotrequest                 controllers.HomeController.gotRequest
+GET     /myname/:name/:sname        controllers.HomeController.myName(name,sname)
+GET     /dynamicname/*name          controllers.HomeController.dynamicName(name)
+GET     /regexname/$id<[0-9]+>      controllers.HomeController.regexName(id)
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
